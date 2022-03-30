@@ -24,7 +24,7 @@ nginxroot=$(cat $(find / -name nginx.conf) | grep "root" | grep -o "/.*" | cut -
 echo -n "vmess://$config" | base64 -w 0 > $nginxroot/809
 [ $(ps -A | grep "nginx" | wc -l) -lt 1 ] && nginx
 [ ! -d ~/lt809ml ] && mkdir ~/lt809ml
-[ ! -a ~/lt809ml/sub ] && wget -O ~/lt809ml/sub https://raw.githubusercontent.com/chaochaoyun/809809/main/809
+[ ! -a ~/lt809ml/sub ] && wget -O ~/lt809ml/sub https://raw.githubusercontent.com/chaochaoyun/809809/main/sub
 chmod +x ~/lt809ml/sub
 if [ $(crontab -l | grep "lt809ml/sub" | wc -l) -lt 1 ]
 then crontab -l > crontablist
